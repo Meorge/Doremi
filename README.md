@@ -1,5 +1,5 @@
 # ![](/Doremi_ColorLogoHoriz.png)
-Doremi is a music playing system for Unity games that makes it easy to include seamlessly-looped music with multiple variations.
+Doremi is a music playing system for Unity games that makes it easy to include seamlessly-looped music with multiple variations. You will need to download [DOTween](http://dotween.demigiant.com/getstarted.php) in order to use Doremi (which you should have anyways, it's great!)
 
 ## Note
 Doremi is very much a work in progress. It may well have some bugs and issues. If you find any, please report them so we can fix them (or fix them and make a pull request)!
