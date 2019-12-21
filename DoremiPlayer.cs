@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using UnityEngine.Audio;
 using DG.Tweening;
 
@@ -12,7 +13,6 @@ public class DoremiPlayer : MonoBehaviour
     public PlayerSetting playerSetting = PlayerSetting.Stopped;
 
     private int currentChannel;
-    public int currentPosition;
 
     public AudioMixerGroup mixerGroup;
 
@@ -213,16 +213,6 @@ public class DoremiPlayer : MonoBehaviour
         }
     }
 
-    public void Update() {
-        currentPosition = CurrentPosition;
-        //if (mainChannels[0].isPlaying) Debug.LogError("AAAAAA");
-    }
-
-    // public void Start() {
-    //     CurrentMusic = currentMusic;
-    //     //Play();
-    // }
-
     public void Stop() {
         playerSetting = PlayerSetting.Stopped;
         foreach (Transform child in transform) {
@@ -351,3 +341,31 @@ public enum PlayerSetting {
     Playing = 1,
     Paused = 2
 }
+
+// [CustomEditor(typeof(DoremiPlayer))]
+// public class DoremiPlayerEditor : Editor {
+// 	SerializedProperty currentMusic;
+// 	SerializedProperty mixerGroup;
+//     SerializedProperty currentPos;
+//     SerializedProperty currentPosFrac;
+
+// 	void OnEnable() {
+// 		currentMusic = serializedObject.FindProperty("currentMusic");
+// 		mixerGroup = serializedObject.FindProperty("mixerGroup");
+// 		currentPos = serializedObject.FindProperty("CurrentPosition");
+//         currentPosFrac = serializedObject.FindProperty("CurrentPositionFraction");
+// 	}
+
+// 	public override void OnInspectorGUI() {
+// 		serializedObject.Update();
+// 		EditorGUILayout.PropertyField(currentMusic);
+//         EditorGUILayout.PropertyField(mixerGroup);
+
+//         // Debug.Log(currentPos.exposedReferenceValue);
+
+//         EditorGUILayout.Slider("Position", currentPosFrac.floatValue, 0f, 1f);
+//         EditorGUILayout.LabelField("", $"{currentPos.intValue}/{((DoremiMusic)currentMusic.exposedReferenceValue).loopEndSamples}");
+
+// 		serializedObject.ApplyModifiedProperties();
+// 	}
+// }
