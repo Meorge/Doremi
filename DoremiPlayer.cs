@@ -102,7 +102,7 @@ public class DoremiPlayer : MonoBehaviour
                 if (mainChannels.Count > 0 && mainChannels[0] != null) {
                     output = mainChannels[0].timeSamples;
                 } else {
-                    Debug.LogErrorFormat("Doremi Error: There are {0} main channels; there should be at least one!", mainChannels.Count);
+                    Debug.LogErrorFormat("Doremi Error: There are 0 main channels; there should be at least one!");
                     output = 69;
                 }
             } else {
